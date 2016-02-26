@@ -3,15 +3,23 @@ var fs = require('fs');
 
 var site = require('apostrophe-site')();
 
+var adminPassword;
+// ADMIN_PASSWORD must be set in heroku
+if (!process.env.ADMIN_PASSWORD){
+    var accounts = require('./data/accounts.js');
+    adminPassword = accounts.admin.password;
+} else {
+    adminPassword = process.env.ADMIN_PASSWORD;
+}
 site.init({
 
   // This line is required and allows apostrophe-site to use require() and manage our NPM modules for us.
   root: module,
-  shortName: 'apostrophe-sandbox',
-  hostName: 'apostrophe-sandbox',
-  title: 'Apostrophe Sandbox',
-  sessionSecret: 'apostrophe sandbox demo party',
-  adminPassword: 'demo',
+  shortName: 'Gratos du mois',
+  hostName: 'gratos.herokuapp.com',
+  title: 'Gratos du mois',
+  sessionSecret: 'siom ud sotarg el',
+  adminPassword: adminPassword,
 
   // Force a2 to prefix all of its URLs. It still
   // listens on its own port, but you can configure
@@ -114,8 +122,6 @@ site.init({
     'apostrophe-groups': {},
     'apostrophe-browserify': {
       files: ["./public/js/modules/_site.js"]
-    },
-    'apostrophe-demo-login': {
     }
   },
 
