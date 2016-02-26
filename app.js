@@ -3,23 +3,16 @@ var fs = require('fs');
 
 var site = require('apostrophe-site')();
 
-var adminPassword;
-// ADMIN_PASSWORD must be set in heroku
-if (!process.env.ADMIN_PASSWORD){
-    var accounts = require('./data/accounts.js');
-    adminPassword = accounts.admin.password;
-} else {
-    adminPassword = process.env.ADMIN_PASSWORD;
-}
+var accounts = require('./data/accounts');
 site.init({
 
   // This line is required and allows apostrophe-site to use require() and manage our NPM modules for us.
   root: module,
-  shortName: 'Gratos du mois',
+  shortName: 'gratos',
   hostName: 'gratos.herokuapp.com',
   title: 'Gratos du mois',
   sessionSecret: 'siom ud sotarg el',
-  adminPassword: adminPassword,
+  adminPassword: accounts.admin.password,
 
   // Force a2 to prefix all of its URLs. It still
   // listens on its own port, but you can configure

@@ -1,6 +1,8 @@
 locales
 npm-debug.log
 data
+!data/accounts.js
+!data/local.js
 public/uploads
 public/apos-minified
 public/js/_site-compiled.js
