@@ -6,6 +6,10 @@
   "scripts": {
     "start": "node app.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eric-burel/gratos.git"
+  },
   "author": "Eric Burel",
   "license": "BSD",
   "dependencies": {
