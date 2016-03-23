@@ -9,6 +9,10 @@
     Pour tester le site sur une machine locale, il faut créer les fichiers
     data/accounts.js et data/local.js, sur la base des fichiers accounts.example.js
     et local.example.js à la racine du dossier.
+    
+    Enfin, il faut initialiser la base de données gràce aux commandes :
+    heroku bash
+    node app apostrophe:reset
 
 # Apostrophe
 
