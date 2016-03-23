@@ -2,6 +2,12 @@
 // is merged with the object you pass when configuring
 // `apostrophe-site` in app.js.
 
+var mongoUri;
+if (!process.env.MONGOLAB_URI){
+    mongoUri ='mongodb://localhost:27017/gratos';
+} else {
+    mongoUri = process.env.MONGOLAB_URI;
+}
 module.exports = {
 
   // Absolute URL is only necessary with s3
@@ -57,5 +63,3 @@ module.exports = {
     // mongodb://user:password@host:port/dbname
   }
 };
-
-
